@@ -1,13 +1,37 @@
+"use client"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TopicSelect } from "@/components/topicselect";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import Image from "next/image";
+import mapboxIcon from "@/public/mapbox-svg.svg"
+import googleMapsIcon from "@/public/google-maps-svg.svg"
+import { useState } from "react";
 
 export default function Home() {
+  const [mapProvider, setMapProvider] = useState("google");
+
   return (
-    <div className="flex flex-col h-full bg-[#005655] p-2">
+    <div className="flex flex-col h-full bg-[#005655] p-2 relative">
+      
       <TopicSelect />
+      <Image
+      priority
+      src={googleMapsIcon}
+      alt="Google Maps"
+      className="absolute z-50 h-[28px] w-[44.8px] my-2 ml-[156px]"
+    />
+      <Switch className="absolute z-50 m-2 ml-48" />
+      <Image
+      priority
+      src={mapboxIcon}
+      alt="Mapbox"
+      className="absolute z-50 h-[28px] w-[28px] m-2 ml-60"
+    />
+
       <Tabs defaultValue="web" className="h-full flex flex-col">
         <TabsList>
           <TabsTrigger value="web">Web</TabsTrigger>
@@ -19,7 +43,7 @@ export default function Home() {
         </TabsList>
         <TabsContent value="web" className="h-full">
           <iframe
-            src="https://stackblitz.com/edit/mapsindoors-demo?embed=1&file=index.html,styles.css,script.js&hideExplorer=1&hideNavigation=1"
+            src="https://stackblitz.com/edit/mapsindoors-demo-google?embed=1&file=index.html,styles.css,script.js&hideExplorer=1&hideNavigation=1"
             className="h-full w-full border-0 rounded-md"
             title="mapsindoors-demo"
             allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
