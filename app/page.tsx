@@ -24,7 +24,15 @@ export default function Home() {
       alt="Google Maps"
       className="absolute z-50 h-[28px] w-[44.8px] my-2 ml-[156px]"
     />
-      <Switch className="absolute z-50 m-2 ml-48" />
+      <Switch className="absolute z-50 m-2 ml-48" onCheckedChange={
+        (checked) => {
+          if (checked) {
+            setMapProvider("mapbox");
+          } else {
+            setMapProvider("google");
+          }
+        }
+      } />
       <Image
       priority
       src={mapboxIcon}
@@ -42,13 +50,23 @@ export default function Home() {
           {/* <TabsTrigger value="custom-web">Custom Web</TabsTrigger> */}
         </TabsList>
         <TabsContent value="web" className="h-full">
+          { mapProvider === "google" ?
           <iframe
             src="https://stackblitz.com/edit/mapsindoors-demo-google?embed=1&file=index.html,styles.css,script.js&hideExplorer=1&hideNavigation=1"
             className="h-full w-full border-0 rounded-md"
-            title="mapsindoors-demo"
+            title="mapsindoors-demo-web-google"
             allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
             sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
           ></iframe>
+          :
+          <iframe
+            src="https://stackblitz.com/edit/mapsindoors-demo-mapbox?embed=1&file=index.html,styles.css,script.js&hideExplorer=1&hideNavigation=1"
+            className="h-full w-full border-0 rounded-md"
+            title="mapsindoors-demo-web-mapbox"
+            allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+            sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+          ></iframe>
+          }
         </TabsContent>
         <TabsContent value="android" className="h-full">
           <Card className="h-full w-full p-4">
