@@ -41,7 +41,7 @@ export default function Home() {
     />
 
       <Tabs defaultValue="web" className="h-full flex flex-col">
-        <TabsList>
+        <TabsList className="flex p-5">
           <TabsTrigger value="web">Web</TabsTrigger>
           <TabsTrigger value="android">Android</TabsTrigger>
           <TabsTrigger value="ios">iOS</TabsTrigger>
@@ -78,7 +78,7 @@ export default function Home() {
               id="android-code"
             />
             <iframe
-              src="https://appetize.io/embed/standalone_kmzzcvqqket4rbso6xvurbwgcu?device=pixel7&osVersion=13.0&scale=60"
+              src="https://appetize.io/embed/keqy6afannyhcsu7ppvpc5b3ru?device=pixel7&osVersion=13.0&scale=62"
               width="fit-content"
               height="fit-content"
             ></iframe>
@@ -95,7 +95,7 @@ export default function Home() {
               id="ios-code"
             />
             <iframe
-              src="https://appetize.io/embed/standalone_kmzzcvqqket4rbso6xvurbwgcu?device=iphone14pro&osVersion=16.2&scale=60"
+              src="https://appetize.io/embed/4xorvcuqglp63s633i2fsbanqe?device=iphone14pro&osVersion=16.2&scale=60"
               width="fit-content"
               height="fit-content"
             ></iframe>
@@ -129,7 +129,9 @@ export default function Home() {
             </div>
           </Card>
         </TabsContent>
-        {/* <TabsContent value="custom-web">Custom Web</TabsContent> */}
+        {/* <TabsContent value="custom-web">
+          
+        </TabsContent> */}
       </Tabs>
     </div>
   );
