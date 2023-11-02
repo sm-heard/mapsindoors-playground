@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-full bg-[#005655] p-2 relative">
       
-      <TopicSelect />
+      {/* <TopicSelect /> */}
       <Image
       priority
       src={googleMapsIcon}
@@ -43,10 +43,10 @@ export default function Home() {
       <Tabs defaultValue="web" className="h-full flex flex-col">
         <TabsList className="flex p-5">
           <TabsTrigger value="web">Web</TabsTrigger>
-          <TabsTrigger value="android">Android</TabsTrigger>
-          <TabsTrigger value="ios">iOS</TabsTrigger>
-          <TabsTrigger value="react-native">React Native</TabsTrigger>
-          <TabsTrigger value="flutter">Flutter</TabsTrigger>
+          <TabsTrigger disabled value="android">Android</TabsTrigger>
+          <TabsTrigger disabled value="ios">iOS</TabsTrigger>
+          <TabsTrigger disabled value="react-native">React Native</TabsTrigger>
+          <TabsTrigger disabled value="flutter">Flutter</TabsTrigger>
           {/* <TabsTrigger value="custom-web">Custom Web</TabsTrigger> */}
         </TabsList>
         <TabsContent value="web" className="h-full">
