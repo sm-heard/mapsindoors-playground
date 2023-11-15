@@ -22,9 +22,9 @@ export default function Home() {
       priority
       src={googleMapsIcon}
       alt="Google Maps"
-      className="absolute z-50 h-[28px] w-[44.8px] my-2 ml-[156px]"
+      className="absolute z-50 h-[28px] w-[44.8px] my-2"
     />
-      <Switch className="absolute z-50 m-2 ml-48" onCheckedChange={
+      <Switch className="absolute z-50 m-2 ml-9" onCheckedChange={
         (checked) => {
           if (checked) {
             setMapProvider("mapbox");
@@ -37,7 +37,7 @@ export default function Home() {
       priority
       src={mapboxIcon}
       alt="Mapbox"
-      className="absolute z-50 h-[28px] w-[28px] m-2 ml-60"
+      className="absolute z-50 h-[28px] w-[28px] m-2 ml-[84px]"
     />
 
       <Tabs defaultValue="web" className="h-full flex flex-col">
